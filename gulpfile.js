@@ -15,7 +15,7 @@ const panini = require("panini");
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
 const htmlmin = require('gulp-htmlmin');
-const G = require('glob');
+const pug = require('gulp-pug');
 
 var path = {
     build: {
@@ -35,16 +35,19 @@ var path = {
     src: {
         html: "src/*.html",
         js: "src/assets/js/*.js",
-        css: "src/assets/sass/style.scss",
+        css: "src/assets/sass/style.+(scss|sass)",
         images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
-        fonts: "src/assets/fonts/**/*.*"
+        fonts: "src/assets/fonts/**/*.*",
+        pug: "src/*.pug",
     },
     watch: {
         html: "src/**/*.html",
         js: "src/assets/js/**/*.js",
-        css: "src/assets/sass/**/*.scss",
+        css: "src/assets/sass/**/*.+(scss|sass)",
         images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
-        fonts: "src/assets/fonts/**/*.*"
+        fonts: "src/assets/fonts/**/*.*",
+        pug: "src/*.pug",
+        pugComponents: "src/assets/components/*.pug"
     },
     cleanDist: "./dist",
     cleanProd: "./prod"
@@ -72,6 +75,14 @@ function html() {
         .pipe(plumber())
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream());
+}
+
+function pugTask() {
+    return src(path.src.pug, {base: 'src/'})
+        .pipe(plumber())
+        .pipe(pug())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream())
 }
 
 function css() {
@@ -114,6 +125,8 @@ function watchFiles() {
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
+    gulp.watch([path.watch.pug], pugTask);
+    gulp.watch([path.watch.pugComponents], pugTask);
 }
 
 // prod build
@@ -126,6 +139,17 @@ function prodHtml() {
             removeComments: true
         }))
         .pipe(dest(path.prod.html));
+}
+
+function prodPug() {
+    return src(path.src.pug, {base: 'src/'})
+        .pipe(plumber())
+        .pipe(pug())
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+        }))
+        .pipe(dest(path.prod.html))
 }
 
 function prodCss() {
@@ -171,8 +195,8 @@ function prodImages() {
         .pipe(dest(path.prod.images));
 }
 
-const prod = gulp.series(cleanProd, gulp.parallel(prodHtml, prodCss, prodJs, prodImages, fonts));
-const build = gulp.series(cleanDist, gulp.parallel(html, css, js, images, fonts));
+const prod = gulp.series(cleanProd, gulp.parallel(prodPug, prodHtml, prodCss, prodJs, prodImages, fonts));
+const build = gulp.series(cleanDist, gulp.parallel(pugTask, html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 

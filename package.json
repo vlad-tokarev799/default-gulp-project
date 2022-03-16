@@ -19,6 +19,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "*",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "*",
     "gulp-rigger": "*",
     "gulp-sass": "^5.1.0",
