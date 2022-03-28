@@ -25,6 +25,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-strip-css-comments": "*",
     "gulp-uglify": "*",
+    "imagemin-jpeg-recompress": "^7.0.0",
     "panini": "*",
     "sass": "^1.49.7"
   },

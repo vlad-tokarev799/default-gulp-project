@@ -16,6 +16,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
 const htmlmin = require('gulp-htmlmin');
 const pug = require('gulp-pug');
+const imgCompress = require('imagemin-jpeg-recompress')
 
 var path = {
     build: {
@@ -46,7 +47,7 @@ var path = {
         css: "src/assets/sass/**/*.+(scss|sass)",
         images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
         fonts: "src/assets/fonts/**/*.*",
-        pug: "src/*.pug",
+        pug: "src/**/*.pug",
         pugComponents: "src/assets/components/*.pug"
     },
     cleanDist: "./dist",
@@ -161,13 +162,8 @@ function prodCss() {
         cascade: true
     }))
     .pipe(gcmq())
-    .pipe(dest(path.prod.css))
     .pipe(cleancss())
     .pipe(removecomments())
-    .pipe(rename({
-        suffix: ".min",
-        extname: ".css"
-    }))
     .pipe(dest(path.prod.css));
 }
 
@@ -175,27 +171,32 @@ function prodJs() {
     return src(path.src.js, {base: "./src/assets/js/"})
         .pipe(plumber())
         .pipe(rigger())
-        .pipe(gulp.dest(path.prod.js))
         .pipe(uglify())
-        .pipe(rename({
-            suffix: ".min",
-            extname: ".js"
-        }))
         .pipe(dest(path.prod.js));
 }
 
 function prodImages() {
     return src(path.src.images)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            interlaced: true,
-            optimizationLevel: 3 // 0 to 7
-        }))
+        .pipe(imagemin([
+            imgCompress({
+              loops: 4,
+              min: 70,
+              max: 80,
+              quality: 'high'
+            }),
+            imagemin.gifsicle(),
+            imagemin.optipng(),
+            imagemin.svgo()
+          ]))
         .pipe(dest(path.prod.images));
 }
 
-const prod = gulp.series(cleanProd, gulp.parallel(prodPug, prodHtml, prodCss, prodJs, prodImages, fonts));
+function prodFonts() {
+    return src(path.src.fonts)
+        .pipe(gulp.dest(path.prod.fonts));
+}
+
+const prod = gulp.series(cleanProd, gulp.parallel(prodPug, prodHtml, prodCss, prodJs, prodImages, prodFonts));
 const build = gulp.series(cleanDist, gulp.parallel(pugTask, html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
