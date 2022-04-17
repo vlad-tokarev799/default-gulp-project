@@ -1,4 +1,4 @@
-const {src, dest, parallel, task} = require('gulp'),
+const {src, dest} = require('gulp'),
 	gulp = require('gulp'),
 	browsersync = require('browser-sync').create(),
 	del = require('del'),
@@ -38,7 +38,7 @@ const path = {
 		html: 'src/**/*{html,php,pug}',
 		js: 'src/assets/js/*.js',
 		css: 'src/assets/sass/style.{scss,sass}',
-		images: 'src/assets/img**/*.{jpg,png,svg,gif,ico,webp,jpeg}',
+		images: 'src/assets/img/**/*.{jpg,png,svg,gif,ico,webp,jpeg}',
 		fonts: 'src/assets/fonts/**/*.*',
 		data: 'src/**/*.{json,txt,md,htaccess}'
 	},
@@ -83,7 +83,7 @@ const dev = {
 			.pipe(browsersync.stream())
 	},
 	js: () => {
-		return src(path.src.css)
+		return src(path.src.js)
 			.pipe(plumber())
 			.pipe(rigger())
 			.pipe(dest(path.default.js))
