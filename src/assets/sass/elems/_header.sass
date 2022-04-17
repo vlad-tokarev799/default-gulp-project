@@ -1,0 +1,42 @@
+.header
+  padding: 55px 0 0px
+
+.header__container
+  display: grid
+  grid-template-columns: 200px 1fr 200px
+  grid-template-areas: "logo top-nav button"
+
+.header__logo
+  grid-area: logo
+
+.top-nav
+  grid-area: top-nav
+  justify-self: center
+  align-self: center
+
+.header__button
+  padding: 15px 17px 16px 18px
+  grid-area: button
+  justify-self: end
+
+
+@media (max-width: 990px)
+  .header
+    padding: 20px 0
+
+  .header__container
+    grid-template-areas: "logo button top-nav"
+    grid-template-columns: 140px 1fr 140px
+
+  .top-nav
+    justify-self: end
+
+  .header__button
+    padding: 11px 14px 12px 14px
+    justify-self: center
+@media (max-width: 580px)
+  .header__container
+    grid-template-areas: "logo logo top-nav" "button button button"
+    grid-row-gap: 15px
+
+

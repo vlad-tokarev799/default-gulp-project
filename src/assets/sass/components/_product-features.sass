@@ -1,0 +1,54 @@
+.product-features__container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 0 35px
+  grid-template-areas: "text image" "link image"
+.product-features__container_reverse
+  grid-template-areas: "image text" "image link"
+
+.product-features__text
+  padding-top: 5px
+  grid-area: text
+
+.product-features__pre-title
+  font-style: normal
+  font-weight: normal
+  font-size: 22px
+  line-height: 36px
+  text-transform: uppercase
+  color: $light
+
+.product-features__title
+  margin-top: 26px
+  margin-bottom: 22px
+
+.product-features__image-wrapper
+  grid-area: image
+  align-self: center
+.product-features__image
+  max-width: 100%
+
+.product-features__link-block
+  padding-top: 25px
+  grid-area: link
+.product-features__link
+  font-style: normal
+  font-weight: normal
+  font-size: 24px
+  line-height: 100%
+  color: $main-color
+  text-decoration: none
+.product-features__link-arrow
+  font-size: 18px
+  margin-left: 12px
+
+@media (max-width: 768px)
+  .product-features__container
+    grid-template-columns: 1fr
+    grid-template-areas: "text" "image" "link"
+    justify-items: center
+    text-align: center
+    grid-gap: 20px 0
+  .product-features__image
+    max-width: 400px
+    width: 100%

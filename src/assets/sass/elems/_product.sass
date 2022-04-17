@@ -1,0 +1,44 @@
+.product
+  //opacity: .5
+  margin-top: 212px
+
+.product__image-wrapper
+  padding-top: 88px
+  background-color: $main-color
+  background-image: url('../img/blob1.png'), url('../img/blob2.png')
+  background-repeat: no-repeat
+  background-position: top right, bottom left
+.product__image
+  max-width: 100%
+
+
+.product__brands
+  margin-top: 83px
+.product__brands-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+@media (max-width: 1170px)
+  .product
+    margin-top: 160px
+  .product__brand
+    margin: 0 15px
+@media (max-width: 990px)
+  .product
+    margin-top: 100px
+  .product__image-wrapper
+    background-size: 40%, 40%
+  .product__brands-container
+    flex-wrap: wrap
+    justify-content: space-around
+  .product__brand
+    margin: 15px
+@media (max-width: 580px)
+  .product__image-wrapper
+    padding-top: 40px
+  .product__brands
+    margin-top: 30px
+@media (max-width: 480px)
+  .product
+    margin-top: 50px

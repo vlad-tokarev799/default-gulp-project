@@ -16,7 +16,7 @@ const {src, dest} = require('gulp'),
 
 const baseDirs = {
 	default: 'dist',
-	build: 'build',
+	build: 'docs',
 	server: 'server'
 }
 
@@ -135,7 +135,7 @@ const build = {
 			.pipe(dest(path.build.css))
 	},
 	js: () => {
-		return src(path.src.css)
+		return src(path.src.js)
 			.pipe(plumber())
 			.pipe(rigger())
 			.pipe(uglify())

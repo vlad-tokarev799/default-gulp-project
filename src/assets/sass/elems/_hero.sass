@@ -1,0 +1,97 @@
+.hero
+  margin-top: 105px
+
+.hero__container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: "text image" "button-line image"
+
+.hero__text
+  padding-top: 10px
+  grid-area: text
+
+.hero__title
+  margin-bottom: 20px
+
+.hero__button-line
+  margin-top: 40px
+  display: flex
+  align-items: center
+  grid-area: button-line
+
+.hero__button
+  font-style: normal
+  font-weight: normal
+  font-size: 24px
+  line-height: 39px
+  padding: 18px 24px
+.hero__button-icon
+  font-size: 20px
+  margin-left: 10px
+
+.hero__button-title
+  margin-left: 24px
+
+.hero__image-wrapper
+  justify-self: center
+  align-self: center
+  padding-left: 10px
+  grid-area: image
+.hero__image
+  max-width: 100%
+
+@media (max-width: 1170px)
+  .hero__title
+    margin-bottom: 15px
+  .hero__button
+    font-size: 22px
+    padding: 16px 22px
+  .hero__button-title
+    margin-left: 20px
+@media (max-width: 990px)
+  .hero
+    margin-top: 80px
+  .hero__title
+    margin-bottom: 10px
+  .hero__button-line
+    flex-direction: column
+    align-items: flex-start
+    margin-top: 15px
+  .hero__button
+    font-size: 20px
+  .hero__button-icon
+    font-size: 16px
+    margin-left: 7px
+  .hero__button-title
+    margin-left: 0
+    margin-top: 10px
+@media (max-width: 768px)
+  .hero
+    margin-top: 60px
+  .hero__container
+    grid-template-areas: "text text" "image image" "button-line button-line"
+    grid-row-gap: 40px
+  .hero__text
+    text-align: center
+  .hero__button-line
+    flex-direction: row
+    align-items: center
+    justify-content: center
+  .hero__button-title
+    margin-top: 0
+    margin-left: 14px
+  .hero__image
+    max-width: 400px
+    width: 100%
+@media (max-width: 580px)
+  .hero__button
+    font-size: 18px
+    padding: 14px 20px
+@media (max-width: 480px)
+  .hero
+    margin-top: 30px
+  .hero__button-line
+    flex-direction: column
+  .hero__button-title
+    margin-left: 0
+    margin-top: 10px

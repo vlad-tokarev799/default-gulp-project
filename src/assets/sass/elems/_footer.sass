@@ -1,0 +1,161 @@
+.footer
+  padding-top: 78px
+
+.top-footer
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  padding-bottom: 40px
+
+.footer__title
+  font-style: normal
+  font-weight: 400
+  font-size: 24px
+  line-height: 39px
+  text-transform: uppercase
+  color: $dark
+
+.top-footer__links
+  margin-left: 174px
+  margin-right: -6px
+
+.top-footer__links, .top-footer__legal
+  flex-grow: 1
+
+.footer__nav
+  margin-top: 24px
+.footer__nav-item
+  margin-top: 8px
+.footer__nav-link
+  font-style: normal
+  font-weight: 400
+  font-size: 18px
+  line-height: 29px
+  color: $dark
+  text-decoration: none
+
+.top-footer__subscribe-info
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 32px
+  color: $light
+  margin-top: 24px
+  margin-bottom: 18px
+
+.top-footer__subscribe-form
+  position: relative
+.top-footer__subscribe-input
+  background: #FFFFFF
+  border: 1px solid $dark
+  box-sizing: border-box
+  border-radius: 8px
+  width: 349px
+  padding: 17px 115px 16px 23px
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 29px
+  color: $dark
+  &:focus
+    border: 1px solid $main-color
+
+.top-footer__subscribe-button
+  position: absolute
+  right: 6px
+  top: 7px
+  font-weight: 700
+  font-size: 16px
+  line-height: 26px
+  padding: 11px 15px 11px 18px
+
+.top-footer__subscribe-attention
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 23px
+  color: $light
+  margin-top: 10px
+
+.bottom-footer
+  border-top: 1px solid rgba(189, 189, 189, 0.2)
+  display: flex
+  justify-content: space-between
+  padding-top: 20px
+  padding-bottom: 90px
+
+.bottom-footer__links
+  margin-left: -2px
+.bottom-footer__link
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 23px
+  color: $dark
+  text-decoration: none
+  margin-right: 20px
+
+.bottom-footer__info
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 23px
+  color: $dark
+  margin-right: 145px
+
+.bottom-footer__socials
+  margin-right: 1px
+.bottom-footer__social-link
+  margin-left: 9px
+  text-decoration: none
+
+@media (max-width: 1170px)
+  .top-footer__links
+    margin-left: 80px
+    margin-right: 0
+@media (max-width: 990px)
+  .top-footer
+    display: grid
+    grid-template-areas: 'logo logo' 'email email' 'links legal'
+    justify-content: center
+    grid-gap: 20px
+  .top-footer__links
+    grid-area: links
+    justify-self: end
+    margin: 0
+    width: 205px
+    text-align: right
+  .top-footer__legal
+    grid-area: legal
+    width: 205px
+  .footer__logo
+    grid-area: logo
+    justify-self: center
+  .top-footer__subscribe
+    grid-area: email
+    text-align: center
+    justify-self: center
+  .top-footer__subscribe-button
+    text-align: left
+  .bottom-footer
+    padding-bottom: 50px
+  .bottom-footer__info
+    margin-right: 0
+@media (max-width: 580px)
+  .bottom-footer
+    flex-direction: column
+    align-items: center
+  .bottom-footer__info
+    margin: 10px 0
+  .bottom-footer__social-link
+    margin: 0 4px
+@media (max-width: 480px)
+  .footer
+    padding-top: 30px
+  .top-footer
+    grid-template-areas: 'logo' 'email' 'links' 'legal'
+  .top-footer__subscribe-input
+    width: 100%
+  .top-footer__links
+    text-align: left
+    justify-self: start

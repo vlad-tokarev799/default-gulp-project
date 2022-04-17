@@ -1,0 +1,88 @@
+.reviews
+  padding-top: 121px
+  padding-bottom: 121px
+
+.reviews__container
+  display: flex
+  justify-content: center
+
+.reviews__title
+  text-align: center
+  max-width: 920px
+  width: 100%
+
+.reviews-slider
+  display: flex
+  justify-content: center
+  margin-top: 80px
+  overflow: hidden
+
+.reviews-slider__item
+  width: 350px
+  height: 250px
+  box-sizing: border-box
+  border-top: 8px solid #4756DF
+  border-radius: 12px
+  border-right: 1px solid #F5F5F5
+  border-bottom: 1px solid #F5F5F5
+  border-left: 1px solid #F5F5F5
+  padding: 18px 29px 0 27px
+  flex-shrink: 0
+  margin: 0 15px
+
+.reviews-slider__text
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 29px
+  color: #000000
+  margin: 0
+
+.reviews-slider__user-info
+  display: flex
+  margin-top: 24px
+
+.reviews-slider__user-name
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 26px
+  color: #000000
+  margin-left: 12px
+
+.reviews-slider__user-job
+  color: $light
+  position: relative
+  right: 2px
+
+.reviews-slider__dots
+  display: flex
+  justify-content: center
+  margin-top: 24px
+  li
+    width: 12px
+    height: 12px
+    border: 1px solid $dark
+    box-sizing: border-box
+    border-radius: 50%
+    cursor: pointer
+    margin: 0 4px
+    &.slick-active
+      background: $dark
+    button
+      display: none
+
+@media (max-width: 768px)
+  .reviews
+    padding-top: 70px
+    padding-bottom: 70px
+@media (max-width: 480px)
+  .reviews
+    padding-top: 40px
+    padding-bottom: 40px
+  .reviews-slider__item
+    width: 260px
+    height: auto
+  .reviews-slider__user-name
+    display: flex
+    flex-direction: column

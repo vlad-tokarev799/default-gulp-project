@@ -1,0 +1,170 @@
+.choose-plan
+  margin-top: 139px
+  padding-top: 124px
+  padding-bottom: 124px
+  background: #fffaf8
+
+.choose-plan__title
+  font-style: normal
+  font-weight: bold
+  font-size: 72px
+  line-height: 100%
+  text-align: center
+  color: $dark
+
+.choose-plan__cards
+  margin-top: 80px
+  display: flex
+  justify-content: space-between
+
+.choose-plan__card
+  padding: 41px 40px 60px
+  background: #ffffff
+  width: 350px
+  box-sizing: border-box
+  border-radius: 12px
+  &:hover
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.04)
+
+
+.choose-plan__card-title
+  font-style: normal
+  font-weight: 600
+  font-size: 32px
+  line-height: 52px
+  color: $dark
+  margin-top: 24px
+
+.choose-plan__card-list
+  margin-top: 24px
+.choose-plan__card-list-item
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 29px
+  color: $dark
+  display: flex
+  align-items: center
+  margin-bottom: 8px
+  &:before
+    content: url('../img/check-icon.svg')
+    display: inline-block
+    width: 24px
+    height: 24px
+    margin-right: 8px
+  &:last-child
+    margin-bottom: 0
+
+.choose-plan__card-price
+  font-style: normal
+  font-weight: 700
+  font-size: 24px
+  line-height: 39px
+  color: $dark
+  margin-top: 24px
+.choose-plan__card-price-duration
+  color: $light
+  font-size: 18px
+  position: relative
+  right: 8px
+
+.choose-plan__card-price-info
+  font-style: normal
+  font-weight: normal
+  font-size: 12px
+  line-height: 19px
+  color: $light
+  margin-top: -3px
+
+.choose-plan__card-button
+  margin-top: 40px
+  font-size: 16px
+  line-height: 26px
+  padding: 12px 58px 12px 24px
+  display: inline-block
+  position: relative
+  svg
+    display: inline-block
+    width: 24px
+    height: 24px
+    position: absolute
+    right: 24px
+    top: 13px
+  &:hover
+    svg
+      fill: #ffffff
+
+@media (max-width: 1170px)
+  .choose-plan__title
+    font-size: 62px
+  .choose-plan__card
+    width: 300px
+@media (max-width: 990px)
+  .choose-plan
+    margin: 80px 0 0
+    padding: 70px 0
+  .choose-plan__cards
+    margin-top: 60px
+  .choose-plan__card
+    width: 220px
+    padding: 21px 20px 40px
+  .choose-plan__card-title
+    font-size: 24px
+    margin-top: 12px
+    line-height: 1.5
+  .choose-plan__card-list
+    margin-top: 12px
+  .choose-plan__card-list-item
+    font-size: 16px
+    line-height: 26px
+    &:before
+      width: 18px
+      height: 18px
+      margin-right: 8px
+@media (max-width: 768px)
+  .choose-plan__title
+    font-size: 48px
+  .choose-plan__cards
+    flex-direction: column
+  .choose-plan__card
+    width: 100%
+    margin-bottom: 20px
+    display: grid
+    padding: 50px
+    grid-template-columns: repeat(2, 200px)
+    grid-template-areas: 'icon icon' 'title price' 'list price-info' 'list button'
+    justify-content: center
+  .choose-plan__card-icon-wrapper
+    grid-area: icon
+  .choose-plan__card-title
+    grid-area: title
+    margin-top: 12px
+  .choose-plan__card-price
+    grid-area: price
+    margin-top: 12px
+  .choose-plan__card-price-info
+    grid-area: 'price-info'
+  .choose-plan__card-button
+    grid-area: button
+  .choose-plan__card-list
+    grid-area: list
+    margin-top: 12px
+@media (max-width: 580px)
+  .choose-plan__title
+    font-size: 36px
+@media(max-width: 480px)
+  .choose-plan
+    margin: 40px 0 0
+    padding: 30px 0
+  .choose-plan__cards
+    margin-top: 30px
+  .choose-plan__card
+    grid-template-columns: 1fr
+    grid-template-areas: 'icon' 'title' 'list' 'price' 'price-info' 'button'
+    justify-items: center
+  .choose-plan__card-list-item
+    position: relative
+    &:before
+      position: absolute
+      top: 0
+      left: -26px

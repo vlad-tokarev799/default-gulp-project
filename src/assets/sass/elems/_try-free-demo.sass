@@ -1,0 +1,82 @@
+.try-free-demo
+  padding-top: 120px
+  padding-bottom: 306px
+  background-color: $main-color
+  background-image: url('../img/try-free-demo/left.png'), url('../img/try-free-demo/right.png'), url('../img/blob1.png'), url('../img/blob2.png')
+  background-repeat: no-repeat
+  background-position: bottom 95px left calc(50% - 455px / 2 - 203px), bottom 95px right calc(50% - 445px / 2 - 192px), top right, bottom left
+
+.try-free-demo__container
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.try-free-demo__title
+  font-style: normal
+  font-weight: bold
+  font-size: 72px
+  line-height: 100%
+  text-align: center
+  color: #FFFFFF
+
+.try-free-demo__paragraph
+  font-style: normal
+  font-weight: 500
+  font-size: 36px
+  line-height: 100%
+  text-align: center
+  color: #FFFFFF
+  margin-top: 24px
+  letter-spacing: .3px
+
+.try-free-demo__button
+  background: #ffffff
+  margin-top: 57px
+  font-style: normal
+  font-weight: normal
+  font-size: 22px
+  line-height: 95%
+  padding: 19px 24px
+  display: flex
+  align-items: center
+  border-color: transparent
+  svg
+    margin-left: 8px
+    fill-opacity: 0
+  &:hover
+    border-color: #ffffff
+    svg
+      stroke: #fff
+
+@media (max-width: 1170px)
+  .try-free-demo
+    background-size: 350px, 350px, 40%, 40%
+    background-position: bottom 95px left calc(50% - 350px / 2 - 100px), bottom 95px right calc(50% - 350px / 2 - 100px), top right, bottom left
+
+@media (max-width: 990px)
+  .try-free-demo
+    background-size: 300px, 300px, 40%, 40%
+    background-position: bottom 75px left calc(50% - 300px / 2 - 70px), bottom 75px right calc(50% - 300px / 2 - 70px), top right, bottom left
+    padding-bottom: 250px
+    padding-top: 80px
+  .try-free-demo__title
+    font-size: 50px
+  .try-free-demo__paragraph
+    font-size: 28px
+  .try-free-demo__button
+    margin-top: 35px
+@media (max-width: 580px)
+  .try-free-demo
+    background-size: 250px, 250px, 40%, 40%
+    background-position: bottom 75px left calc(50% - 250px / 2 - 30px), bottom 75px right calc(50% - 250px / 2 - 30px), top right, bottom left
+    padding-bottom: 250px
+    padding-top: 80px
+@media (max-width: 480px)
+  .try-free-demo
+    background-size: 200px, 200px, 50%, 50%
+    background-position: bottom 55px left calc(50% - 200px / 2), bottom 15px right calc(50% - 200px / 2), top right, bottom left
+    padding-bottom: 230px
+  .try-free-demo__title
+    font-size: 40px
+  .try-free-demo__paragraph
+    font-size: 22px

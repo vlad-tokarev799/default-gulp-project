@@ -1,21 +1,22 @@
 {
   "dependencies": {
     "browser-sync": "*",
-		"del": "*",
-		"gulp": "*",
-		"gulp-autoprefixer": "*",
-		"gulp-clean-css": "*",
-		"gulp-cli": "^2.3.0",
-		"gulp-group-css-media-queries": "*",
-		"gulp-htmlmin": "^5.0.1",
-		"gulp-if": "^3.0.0",
-		"gulp-plumber": "*",
-		"gulp-pug": "^5.0.0",
-		"gulp-rigger": "*",
-		"gulp-sass": "^5.1.0",
-		"gulp-strip-css-comments": "*",
-		"gulp-uglify": "*",
-		"sass": "^1.49.7"
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-cli": "^2.3.0",
+    "gulp-group-css-media-queries": "*",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-plumber": "*",
+    "gulp-pug": "^5.0.0",
+    "gulp-rigger": "*",
+    "gulp-sass": "^5.1.0",
+    "gulp-strip-css-comments": "*",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "*",
+    "sass": "^1.49.7"
   },
   "overrides": {
     "graceful-fs": "^4.2.9"
