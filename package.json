@@ -1,35 +1,40 @@
 {
-  "name": "web-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "browser-sync": "*",
-    "del": "*",
-    "gulp": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-clean-css": "*",
-    "gulp-cli": "^2.3.0",
-    "gulp-group-css-media-queries": "*",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-plumber": "*",
-    "gulp-pug": "^5.0.0",
-    "gulp-rename": "*",
-    "gulp-rigger": "*",
-    "gulp-sass": "^5.1.0",
-    "gulp-strip-css-comments": "*",
-    "gulp-uglify": "*",
-    "imagemin-jpeg-recompress": "^7.0.0",
-    "panini": "*",
-    "sass": "^1.49.7"
+		"del": "*",
+		"gulp": "*",
+		"gulp-autoprefixer": "*",
+		"gulp-clean-css": "*",
+		"gulp-cli": "^2.3.0",
+		"gulp-group-css-media-queries": "*",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-if": "^3.0.0",
+		"gulp-plumber": "*",
+		"gulp-pug": "^5.0.0",
+		"gulp-rigger": "*",
+		"gulp-sass": "^5.1.0",
+		"gulp-strip-css-comments": "*",
+		"gulp-uglify": "*",
+		"sass": "^1.49.7"
   },
   "overrides": {
     "graceful-fs": "^4.2.9"
-  }
+  },
+  "name": "default-project",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlad-tokarev799/gulpfile.git"
+  },
+  "author": "vlad-tokarev799",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlad-tokarev799/gulpfile/issues"
+  },
+  "homepage": "https://github.com/vlad-tokarev799/gulpfile#readme",
+  "description": ""
 }
