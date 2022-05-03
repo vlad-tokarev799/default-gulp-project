@@ -37,5 +37,9 @@
     "url": "https://github.com/vlad-tokarev799/gulpfile/issues"
   },
   "homepage": "https://github.com/vlad-tokarev799/gulpfile#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
