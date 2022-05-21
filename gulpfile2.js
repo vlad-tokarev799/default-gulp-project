@@ -62,7 +62,7 @@ const dev = { // Функции сборки для разработки
             server: {
                 baseDir: `./${ baseDirs.default }`
             },
-            port: 3000,
+            port: 8000,
             notify: false
         })
     },
